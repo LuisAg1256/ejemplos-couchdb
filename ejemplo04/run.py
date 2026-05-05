@@ -13,8 +13,9 @@ for d in data['docs']:
         lista_datos.append(d)
 
 base_datos = "personas004"
+puerto = "5985"
 # Configurar el acceso a la base de datos
-url = f"http://127.0.0.1:5984/{base_datos}"
+url = f"http://127.0.0.1:{puerto}/{base_datos}"
 headers = {'Content-Type': 'application/json'}
 
 # Enviar datos
@@ -25,3 +26,4 @@ for doc in lista_datos:
         json=doc
     )
     print(f"Insertando {doc['nombre']} | {response.status_code}")
+# En el ejemplo 4 se envian uno por uno, gracias al for  doc in lista_datos, haciendo un post por cada documento. En cambio en el ejemplo 4 los datos se envian todos juntos, ya que usamos el _bulk_doc lo que crea un diccionario {'docs': lista_datos} y lo hace un solo post.
