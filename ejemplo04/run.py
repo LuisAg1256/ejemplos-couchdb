@@ -26,4 +26,4 @@ for doc in lista_datos:
         json=doc
     )
     print(f"Insertando {doc['nombre']} | {response.status_code}")
-# En el ejemplo 4 se envian uno por uno, gracias al for  doc in lista_datos, haciendo un post por cada documento. En cambio en el ejemplo 4 los datos se envian todos juntos, ya que usamos el _bulk_doc lo que crea un diccionario {'docs': lista_datos} y lo hace un solo post.
+# En el ejemplo 4 se envian uno por uno, gracias al for  doc in lista_datos, haciendo un post por cada documento. En cambio en el ejemplo 3 los datos se envian todos juntos, ya que usamos el _bulk_doc lo que crea un diccionario {'docs': lista_datos} y lo hace un solo post.
